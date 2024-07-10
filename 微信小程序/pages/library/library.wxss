@@ -1,0 +1,68 @@
+/* 标题栏 */
+.head_box {
+  display: flex;
+  /* justify-content: center;  */
+  padding-top: 120rpx;
+}
+.head_box > image {
+  margin-left: 32rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.head_box > view {
+  margin-left: 15rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+
+/* 消息栏 */
+.search_box {
+  height: 280rpx;
+  margin: 38rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+}
+
+.search_text{
+  display: flex;
+  justify-content: space-between;
+  margin: 38rpx 32rpx 0;
+}
+
+/* 图书栏 */
+.books_title {
+  margin: 60rpx 0 32rpx 34rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+
+}
+.books_system {
+  margin: 0 0 30rpx 34rpx;
+  display: flex;
+  flex-wrap: wrap;
+  width: 94%;
+}
+.books-info {
+  display: flex;
+  width: 330rpx;
+  height: 205rpx;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 32rpx;
+  margin: 0 23rpx 23rpx 0;
+}
+
+
+.books-system-box1 {
+  margin-right: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+}
+.books-system-box2 > view {
+  margin-top: 19rpx;
+  width: 190rpx;
+}

@@ -1,0 +1,16 @@
+<view class="container">
+  <!-- 标题栏 -->
+	<view class="head_box">
+		<image src="/images/book.jpeg" mode="" />
+    <view>{{title}}</view>
+  </view>
+
+  <view class="video-title">
+  回放
+  </view>
+    <!-- <video class = "video"
+      src="http://192.168.25.202/mjpeg/1" 
+  > -->
+  <!-- </video> -->
+
+</view>

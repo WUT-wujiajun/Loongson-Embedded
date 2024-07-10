@@ -1,0 +1,165 @@
+<view class="container">
+
+  <!-- 标题栏 -->
+	<view class="head_box">
+		<image src="/images/book.jpeg" mode="" />
+    <view>{{title}}</view>
+  </view>
+
+  <!-- 消息栏 -->
+  <view class="message_box">
+    <view class="message_text">
+      <image src="/images/message.jpg"mode="" />
+      <view>消息</view>
+    </view>
+
+    <view wx:if= "{{!islocation1}}" class="notice_text">
+      有书籍放错到{{location1}}位置
+    </view>
+    <view wx:if= "{{!islocation2}}" class="notice_text">
+      有书籍放错到{{location2}}位置
+    </view>
+    <view wx:if= "{{!islocation3}}" class="notice_text">
+      有书籍放错到{{location3}}位置
+    </view>
+    <view wx:if= "{{!islocation4}}" class="notice_text">
+      有书籍放错到{{location4}}位置
+    </view>
+    <view wx:if= "{{!islocation5}}" class="notice_text">
+      {{location5}}
+    </view>    
+
+  </view>
+  
+  <view class="deal_message">
+    <van-button round plain type="primary" size="small" color="#00000" bindtap="deal_message" >已处理</van-button>
+  </view>
+
+	<!-- mqtt连接 -->
+	<view class="mqtt_box" bindtap="openDialog">
+		<view>
+			<van-icon wx:if="{{!mqttContontDialog}}" name="arrow-down" />
+			<van-icon wx:if="{{mqttContontDialog}}" name="arrow-up" />
+			MQTT服务器
+		</view>
+		<view style="color:{{isConnect?'RGB(0,176,80)':'RGB(192,0,0)'}}">
+			{{isConnect?'已连接':'未连接'}}
+		</view>
+	</view>
+
+  <van-popup show="{{ mqttContontDialog }}" bind:close="onClose" position="bottom" round custom-style="height: 65%;" bind:close="onClose">
+	<view>
+		<van-cell-group>
+			<van-field label="address" model:value="{{ address }}" />
+			<van-field label="port" model:value="{{ port }}" />
+			<van-field label="username" model:value="{{ username }}" />
+			<van-field label="password" type="password" model:value="{{ password }}" />
+		</van-cell-group>
+		<view class="btn_style">
+			<van-button color="{{isConnect?'#d9d9d9':'#96baff'}} " size="small" bindtap="connectMqtt">连接</van-button>
+			<van-button color="{{isConnect?'#96baff':'#d9d9d9'}} " size="small" bindtap="closeConnect">断开</van-button>
+		</view>
+		<van-cell-group>
+			<view class="subscribe_text">
+				订阅
+			</view>
+			<van-field model:value="{{ push }}" placeholder="请输入订阅地址" />
+			<view class="btn_style">
+				<van-button color="{{isPush?'#d9d9d9':'#96baff'}} " size="small" bindtap="addPush">订阅</van-button>
+				<van-button color="{{isPush?'#96baff':'#d9d9d9'}} " size="small" bindtap="closePush">取消</van-button>
+			</view>
+		</van-cell-group>
+    <van-cell-group>
+		<view class="subscribe_text">
+				发布
+		</view>
+		<van-field placeholder="请输入发布地址" model:value="{{ subscr }}" />
+		<view class="btn_style">
+			<van-button color="{{isSubscr?'#d9d9d9':'#96baff'}} " size="small" bindtap="addSubscr">确认</van-button>
+			<van-button color="{{isSubscr?'#96baff':'#d9d9d9'}} " size="small">修改</van-button>
+		</view>
+	  </van-cell-group>
+  </view>
+</van-popup>
+
+	<!-- 其他设备 -->
+	<view class="sensors-system-title">
+		控制设备
+	</view>
+	<view class="other-system"  wx:for="{{otherSensorList}}" style="height:{{'100rpx'}}">
+		<view style="display: flex;justify-content: space-between;">
+			<view class="flex">
+				<image src="{{item.img}}" style="width: 70rpx;margin: 20rpx 20rpx 0 0;" mode="widthFix" />
+				<view> {{item.name}} </view>
+			</view>
+
+			<view>
+				<switch checked="{{item.isOpen}}" data-param="{{item}}" color="#97baff" bindchange="systemChange" />
+			</view>
+		</view>
+	</view>
+
+	<!-- 其他设备2 -->
+	<view class="sensors-system-title2">
+		手机设备
+	</view>
+	<view class="other-system2"  wx:for="{{otherSensorList2}}" style="height:{{'100rpx'}}">
+		<view style="display: flex;justify-content: space-between;">
+			<view class="flex">
+				<image src="{{item.img}}" style="width: 70rpx;margin: 20rpx 20rpx 0 0;" mode="widthFix" />
+				<view> {{item.name}} </view>
+			</view>
+			<view>
+				<switch checked="{{switchStatus}}" data-param="{{item}}" color="#97baff" bindchange="systemChange2" />
+			</view>
+		</view>
+	</view>
+<!-- <view style="height: 20rpx;"> </view> -->
+
+	<!-- 其他设备3 -->
+	<view class="sensors-system-title3">
+		二维码识别
+	</view>
+	<view class="other-system3"  wx:for="{{otherSensorList3}}" style="height:{{'100rpx'}}">
+		<view style="display: flex;justify-content: space-between;">
+			<view class="flex">
+				<image src="{{item.img}}" style="width: 70rpx;margin: 20rpx 20rpx 0 0;" mode="widthFix" />
+				<view> {{item.name}} </view>
+        <view> {{result}} </view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 其他设备4 -->
+  <view class="sensors-system-title4">
+		舵机
+	</view>
+	<view class="other-system4"  wx:for="{{otherSensorList4}}" style="height:{{'250rpx'}}">
+		<view style="display: flex;justify-content: space-between;">
+			<view class="flex">
+				<image src="{{item.img}}" style="width: 70rpx;margin: 20rpx 20rpx 0 0;" mode="widthFix" />
+				<view> {{item.name}} </view>
+
+			</view>
+      <view style="height: 30rpx;"> </view>
+      <van-cell-group>
+        <van-field model:value="{{ angle }}" placeholder="请输入角度值" />
+        <view class="btn_style">
+		    <van-button color="#96baff" size="small" bindtap="angle">上传
+        </van-button>
+	      </view>
+      </van-cell-group>
+		</view>
+	</view>
+
+  <view style="height: 60rpx;"> </view>
+
+</view>
+
+
+
+
+
+
+
+

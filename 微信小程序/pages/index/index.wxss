@@ -1,0 +1,165 @@
+/* 标题栏 */
+.head_box {
+  display: flex;
+  /* justify-content: center;  */
+  padding-top: 120rpx;
+}
+.head_box > image {
+  margin-left: 32rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.head_box > view {
+  margin-left: 15rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+
+/* 消息栏 */
+.message_box {
+  height: 320rpx;
+  margin: 38rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+}
+.message_text {
+  display: flex;
+  /* justify-content: center;  */
+  padding-top: 10rpx;
+}
+.message_text > image {
+  margin-top: 12rpx;
+  margin-left: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.message_text > view {
+  margin-left: 15rpx;
+  font-size: 45rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+.notice_text{
+  padding-top: 5rpx;
+  font-size: 38rpx;
+  text-align: center;
+  color: #9c3845;
+}
+.deal_message{
+  text-align: end;
+  padding-top: 19rpx;
+  padding-right: 32rpx;
+  
+  
+}
+
+/*mqtt连接*/
+.mqtt_box {
+  display: flex;
+  justify-content: space-between;
+  height: 120rpx;
+  padding: 0 30rpx;
+  margin: 38rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  font-size: 45rpx;
+  line-height: 120rpx;
+  background-color: #ffffff;
+}
+.btn_style {
+  /* background-color: red; */
+  margin: 30rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+.van-button,
+.van-button--default,
+.van-button--small {
+  width: 250rpx;
+}
+.subscribe_text {
+  margin-left: 32rpx;
+}
+
+.sensors-system-title{
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;    
+  font-size: 45rpx;         
+}
+.other-system {
+  /* height: 120rpx; */
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+  font-size: 45rpx;
+  line-height: 100rpx;
+}
+
+.sensors-system-title2{
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;    
+  font-size: 45rpx;         
+}
+.other-system2 {
+  /* height: 120rpx; */
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+  font-size: 45rpx;
+  line-height: 100rpx;
+}
+
+.sensors-system-title3{
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;    
+  font-size: 45rpx;         
+}
+.other-system3 {
+  /* height: 120rpx; */
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+  font-size: 45rpx;
+  line-height: 100rpx;
+}
+
+.sensors-system-title4{
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;    
+  font-size: 45rpx;         
+}
+.other-system4 {
+  /* height: 120rpx; */
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+  font-size: 45rpx;
+  line-height: 100rpx;
+}
+
+.result{
+  height: 100rpx;
+  margin: 38rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0, 0, 0, 0.3);
+  border-radius: 32rpx;
+  background-color: #ffffff;
+}
+
+.result_text{
+  padding: 0 30rpx;
+  margin: 26rpx 32rpx 0;    
+  font-size: 45rpx;    
+}
+
+
+

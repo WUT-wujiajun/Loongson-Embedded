@@ -1,0 +1,28 @@
+/* 标题栏 */
+.head_box {
+  display: flex;
+  /* justify-content: center;  */
+  padding-top: 120rpx;
+}
+.head_box > image {
+  margin-left: 32rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.head_box > view {
+  margin-left: 15rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+.video-title{
+  padding: 0 30rpx;
+  margin: 0rpx 32rpx 0;    
+  font-size: 45rpx;  
+  display: flex;
+  justify-content: center; 
+}
+.video{
+  width: 350px;
+  height: 200px;
+}

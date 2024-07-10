@@ -1,0 +1,44 @@
+<view class="container">
+  <!-- 标题栏 -->
+	<view class="head_box">
+		<image src="/images/book.jpeg" mode="" />
+    <view>{{title}}</view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search_box">
+    <van-search
+      value="{{ value }}"
+      input-align="center"
+      shape="round"
+      background="RGB(255, 255, 255)"
+      placeholder="请输入图书名"
+      show-action
+      bind:search="onSearch"
+      bind:cancel="onCancel"
+    />
+    <view class="search_text">
+      <view>书名:{{searchname}}</view>
+      <view>位置:{{searchlocation}}</view>
+    </view>
+  </view>
+
+  <!-- 图书栏 -->
+  <view class="books_title">
+		图书栏
+	</view>
+
+  <view class="books_system">
+		<view wx:for="{{booksList}}" class="books-info" >
+			<view class="books-system-box1">
+				<image src="{{item.img}}" style="height: 80rpx;" mode="heightFix" />
+			</view>
+      <view class="books-system-box2">
+        <view>{{item.name}}</view>
+        <view>{{item.location}}</view>
+        <!-- <view wx:if= "{{item.islocation}}" style="color: #000000">{{item.location}}</view>
+        <view wx:else style="color: #ff0000">{{item.location}}</view> -->
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,9 @@
+/**app.wxss**/
+.container {
+  min-height: 100vh;
+  background-color: RGB(242, 242, 242);
+}
+.flex {
+  display: flex;
+}
+

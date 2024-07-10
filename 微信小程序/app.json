@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/library/library",
+    "pages/video/video"
+  ],
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/home1.jpg",
+        "selectedIconPath":"images/home1.jpg"
+      },
+      {
+        "pagePath":"pages/library/library",
+        "text":"图书栏",
+        "iconPath":"images/book4.jpg",
+        "selectedIconPath":"images/book4.jpg"
+      },
+      {
+        "pagePath":"pages/video/video",
+        "text":"工作回放",
+        "iconPath":"images/video.jpg",
+        "selectedIconPath":"images/video.jpg"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+	  "navigationBarTextStyle":"black",
+	  "navigationStyle":"custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+	"van-icon": "@vant/weapp/icon/index",
+	"van-popup": "@vant/weapp/popup/index",
+	"van-field": "@vant/weapp/field/index",
+	"van-button": "@vant/weapp/button/index",
+	"van-progress": "@vant/weapp/progress/index",
+  "van-dialog": "@vant/weapp/dialog/index",
+  "van-search": "@vant/weapp/search/index"
+  }
+}
